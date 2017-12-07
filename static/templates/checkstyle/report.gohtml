@@ -1,0 +1,18 @@
+{{ if not (len $.Violations) }}
+	No violations in checkstyle report.
+{{ else }}
+	<details {{- if lt (len $.Violations) 3 }} open {{ end }}>
+		<summary>
+			{{ len $.Violations }} violation(s) found in checkstyle report.
+		</summary>
+
+		<ul>
+		{{ range $violation := $.Violations }}
+			<li>
+				{{/* codeLineReference $violation.File $violation.Line */}}<br/>
+				<pre>{{ $violation.Message }}</pre>
+			</li>
+		{{ end }}
+		</ul>
+	</details>
+{{ end }}

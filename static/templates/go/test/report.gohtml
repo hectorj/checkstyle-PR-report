@@ -1,0 +1,51 @@
+{{ if lt $.PassedTestsCount (len $.Tests) -}}
+<details {{- if lt $.NotPassedTestsCount 3 }} open {{ end }}>
+	<summary>
+		Tests : {{ $.PassedTestsCount }}/{{ len $.Tests }} passed.
+	</summary>
+
+	<table>
+		<thead>
+		<tr>
+			<th>Passed</th>
+			<th>Skipped</th>
+			<th>Failed</th>
+			<th>Total</th>
+		</tr>
+		</thead>
+		<tbody>
+		<tr>
+			<td>{{ $.PassedTestsCount }}</td>
+			<td>{{ $.SkippedTestsCount }}</td>
+			<td>{{ $.FailedTestsCount }}</td>
+			<td>{{ len $.Tests }}</td>
+		</tr>
+		</tbody>
+	</table>
+
+	<ul>
+		{{ range $pkgName, $pkgResults := $.ByPackage }}{{ if or $pkgResults.FailedTestsCount $pkgResults.SkippedTestsCount }}
+			<li>
+				Package <b>{{ $pkgName }}</b>
+
+				<ul>
+					{{ range $test := $pkgResults.Tests }}{{ if not $test.Passed }}
+						<li>
+							<b>{{ $test.Name }}: {{ if $test.Skipped }}skipped{{ else if $test.Failed }}failed{{ end }}</b> in ~{{ $test.Time }}ms.
+							{{- if $test.Output -}}
+								<details><summary>Output</summary>
+									<pre><code>{{- range $index, $outputLine := $test.Output -}}{{ if $index }}
+{{ end -}}
+{{ $outputLine }}
+{{- end -}}
+									</code></pre>
+								</details>
+							{{ end }}
+						</li>
+					{{ end }}{{end}}
+				</ul>
+			</li>
+		{{ end }}{{ end }}
+	</ul>
+</details>
+{{- end }}

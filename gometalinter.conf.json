@@ -1,0 +1,30 @@
+{
+  "Disable": [
+    "golint",
+    "ineffassign"
+  ],
+  "Enable": [
+    "varcheck",
+    "structcheck",
+    "maligned",
+    "megacheck",
+    "dupl",
+    "interfacer",
+    "gas",
+    "goconst",
+    "unconvert",
+    "deadcode",
+    "gotype",
+    "gotypex",
+    "vet",
+    "vetshadow",
+    "gofmt",
+    "goimports",
+    "gosimple",
+    "nakedret",
+    "safesql"
+  ],
+  "Skip": ["_testdata", "static"],
+  "Vendor": true,
+  "VendoredLinters": true
+}

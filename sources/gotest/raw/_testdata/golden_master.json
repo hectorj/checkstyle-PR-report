@@ -1,0 +1,513 @@
+{
+	"Tests": [
+		{
+			"Package": "ir-blaster.com/data/parsers/checkstyle",
+			"Name": "TestParser",
+			"Time": 0,
+			"Passed": true,
+			"Failed": false,
+			"Skipped": false,
+			"Output": null
+		},
+		{
+			"Package": "ir-blaster.com/data/parsers/checkstyle",
+			"Name": "TestParser/Empty",
+			"Time": 0,
+			"Passed": true,
+			"Failed": false,
+			"Skipped": false,
+			"Output": null
+		},
+		{
+			"Package": "ir-blaster.com/data/parsers/checkstyle",
+			"Name": "TestParser/Gometalinter",
+			"Time": 0,
+			"Passed": true,
+			"Failed": false,
+			"Skipped": false,
+			"Output": null
+		},
+		{
+			"Package": "ir-blaster.com/data/parsers/cobertura",
+			"Name": "TestParser",
+			"Time": 0,
+			"Passed": false,
+			"Failed": false,
+			"Skipped": true,
+			"Output": [
+				"parser_test.go:14: @FIXME"
+			]
+		},
+		{
+			"Package": "ir-blaster.com/data/parsers/gocover",
+			"Name": "TestParser",
+			"Time": 0,
+			"Passed": true,
+			"Failed": false,
+			"Skipped": false,
+			"Output": null
+		},
+		{
+			"Package": "ir-blaster.com/data/parsers/gotest",
+			"Name": "TestParser",
+			"Time": 0,
+			"Passed": false,
+			"Failed": true,
+			"Skipped": false,
+			"Output": [
+				"assertions.go:226:",
+				"Error Trace:\tparser_test.go:23",
+				"Error:      \tNot equal:",
+				"            \texpected: gotest.Results{Tests:[]gotest.Test(nil), PassedTestsCount:0x0, SkippedTestsCount:0x0, FailedTestsCount:0x0, TotalTime:0x0}",
+				"            \treceived: gotest.Results{Tests:[]gotest.Test{}, PassedTestsCount:0x0, SkippedTestsCount:0x0, FailedTestsCount:0x0, TotalTime:0x0}",
+				"            \tDiff:",
+				"            \t--- Expected",
+				"            \t+++ Actual",
+				"            \t@@ -1,3 +1,4 @@",
+				"            \t (gotest.Results) {",
+				"            \t- Tests: ([]gotest.Test) \u003cnil\u003e,",
+				"            \t+ Tests: ([]gotest.Test) {",
+				"            \t+ },",
+				"            \t  PassedTestsCount: (uint) 0,"
+			]
+		},
+		{
+			"Package": "ir-blaster.com/data/sinks/file",
+			"Name": "TestSink",
+			"Time": 0,
+			"Passed": true,
+			"Failed": false,
+			"Skipped": false,
+			"Output": []
+		},
+		{
+			"Package": "ir-blaster.com/data/sinks/file",
+			"Name": "TestSink_NonExistingParentDir",
+			"Time": 0,
+			"Passed": true,
+			"Failed": false,
+			"Skipped": false,
+			"Output": []
+		},
+		{
+			"Package": "ir-blaster.com/data/sinks/file",
+			"Name": "TestSink_Dir",
+			"Time": 0,
+			"Passed": true,
+			"Failed": false,
+			"Skipped": false,
+			"Output": []
+		},
+		{
+			"Package": "ir-blaster.com/data/sinks/github",
+			"Name": "TestSink_DummyComment",
+			"Time": 0,
+			"Passed": true,
+			"Failed": false,
+			"Skipped": false,
+			"Output": []
+		},
+		{
+			"Package": "ir-blaster.com/data/sinks/github",
+			"Name": "TestSink_BadCredentials",
+			"Time": 0,
+			"Passed": true,
+			"Failed": false,
+			"Skipped": false,
+			"Output": []
+		},
+		{
+			"Package": "ir-blaster.com/data/sinks/github",
+			"Name": "TestSink_EmptyRepoOwner",
+			"Time": 0,
+			"Passed": true,
+			"Failed": false,
+			"Skipped": false,
+			"Output": []
+		},
+		{
+			"Package": "ir-blaster.com/data/sinks/github",
+			"Name": "TestSink_EmptyRepoName",
+			"Time": 0,
+			"Passed": true,
+			"Failed": false,
+			"Skipped": false,
+			"Output": []
+		},
+		{
+			"Package": "ir-blaster.com/data/sinks/github",
+			"Name": "TestSink_0PRID",
+			"Time": 0,
+			"Passed": true,
+			"Failed": false,
+			"Skipped": false,
+			"Output": []
+		},
+		{
+			"Package": "ir-blaster.com/data/sources/embedded",
+			"Name": "TestSource_GithubPRComment",
+			"Time": 0,
+			"Passed": true,
+			"Failed": false,
+			"Skipped": false,
+			"Output": []
+		},
+		{
+			"Package": "ir-blaster.com/data/sources/embedded",
+			"Name": "TestSource_MissingFile",
+			"Time": 0,
+			"Passed": true,
+			"Failed": false,
+			"Skipped": false,
+			"Output": []
+		},
+		{
+			"Package": "ir-blaster.com/data/sources/embedded",
+			"Name": "TestSource_Directory",
+			"Time": 0,
+			"Passed": true,
+			"Failed": false,
+			"Skipped": false,
+			"Output": []
+		},
+		{
+			"Package": "ir-blaster.com/data/sources/file",
+			"Name": "TestSource_MissingFile",
+			"Time": 0,
+			"Passed": true,
+			"Failed": false,
+			"Skipped": false,
+			"Output": []
+		},
+		{
+			"Package": "ir-blaster.com/data/sources/file",
+			"Name": "TestSource_Directory",
+			"Time": 0,
+			"Passed": true,
+			"Failed": false,
+			"Skipped": false,
+			"Output": []
+		},
+		{
+			"Package": "ir-blaster.com/data/sources/file",
+			"Name": "TestSource_GithubPRComment",
+			"Time": 0,
+			"Passed": true,
+			"Failed": false,
+			"Skipped": false,
+			"Output": []
+		},
+		{
+			"Package": "ir-blaster.com/data/templates/gotpl",
+			"Name": "TestTemplate_Empty",
+			"Time": 0,
+			"Passed": true,
+			"Failed": false,
+			"Skipped": false,
+			"Output": []
+		}
+	],
+	"PassedTestsCount": 19,
+	"NotPassedTestsCount": 2,
+	"SkippedTestsCount": 1,
+	"FailedTestsCount": 1,
+	"TotalTime": 74,
+	"ByPackage": {
+		"ir-blaster.com/data/parsers/checkstyle": {
+			"Tests": [
+				{
+					"Package": "ir-blaster.com/data/parsers/checkstyle",
+					"Name": "TestParser",
+					"Time": 0,
+					"Passed": true,
+					"Failed": false,
+					"Skipped": false,
+					"Output": null
+				},
+				{
+					"Package": "ir-blaster.com/data/parsers/checkstyle",
+					"Name": "TestParser/Empty",
+					"Time": 0,
+					"Passed": true,
+					"Failed": false,
+					"Skipped": false,
+					"Output": null
+				},
+				{
+					"Package": "ir-blaster.com/data/parsers/checkstyle",
+					"Name": "TestParser/Gometalinter",
+					"Time": 0,
+					"Passed": true,
+					"Failed": false,
+					"Skipped": false,
+					"Output": null
+				}
+			],
+			"PassedTestsCount": 3,
+			"NotPassedTestsCount": 0,
+			"SkippedTestsCount": 0,
+			"FailedTestsCount": 0,
+			"TotalTime": 16,
+			"CoveragePercentage": ""
+		},
+		"ir-blaster.com/data/parsers/cobertura": {
+			"Tests": [
+				{
+					"Package": "ir-blaster.com/data/parsers/cobertura",
+					"Name": "TestParser",
+					"Time": 0,
+					"Passed": false,
+					"Failed": false,
+					"Skipped": true,
+					"Output": [
+						"parser_test.go:14: @FIXME"
+					]
+				}
+			],
+			"PassedTestsCount": 0,
+			"NotPassedTestsCount": 1,
+			"SkippedTestsCount": 1,
+			"FailedTestsCount": 0,
+			"TotalTime": 6,
+			"CoveragePercentage": ""
+		},
+		"ir-blaster.com/data/parsers/gocover": {
+			"Tests": [
+				{
+					"Package": "ir-blaster.com/data/parsers/gocover",
+					"Name": "TestParser",
+					"Time": 0,
+					"Passed": true,
+					"Failed": false,
+					"Skipped": false,
+					"Output": null
+				}
+			],
+			"PassedTestsCount": 1,
+			"NotPassedTestsCount": 0,
+			"SkippedTestsCount": 0,
+			"FailedTestsCount": 0,
+			"TotalTime": 9,
+			"CoveragePercentage": ""
+		},
+		"ir-blaster.com/data/parsers/gotest": {
+			"Tests": [
+				{
+					"Package": "ir-blaster.com/data/parsers/gotest",
+					"Name": "TestParser",
+					"Time": 0,
+					"Passed": false,
+					"Failed": true,
+					"Skipped": false,
+					"Output": [
+						"assertions.go:226:",
+						"Error Trace:\tparser_test.go:23",
+						"Error:      \tNot equal:",
+						"            \texpected: gotest.Results{Tests:[]gotest.Test(nil), PassedTestsCount:0x0, SkippedTestsCount:0x0, FailedTestsCount:0x0, TotalTime:0x0}",
+						"            \treceived: gotest.Results{Tests:[]gotest.Test{}, PassedTestsCount:0x0, SkippedTestsCount:0x0, FailedTestsCount:0x0, TotalTime:0x0}",
+						"            \tDiff:",
+						"            \t--- Expected",
+						"            \t+++ Actual",
+						"            \t@@ -1,3 +1,4 @@",
+						"            \t (gotest.Results) {",
+						"            \t- Tests: ([]gotest.Test) \u003cnil\u003e,",
+						"            \t+ Tests: ([]gotest.Test) {",
+						"            \t+ },",
+						"            \t  PassedTestsCount: (uint) 0,"
+					]
+				}
+			],
+			"PassedTestsCount": 0,
+			"NotPassedTestsCount": 1,
+			"SkippedTestsCount": 0,
+			"FailedTestsCount": 1,
+			"TotalTime": 5,
+			"CoveragePercentage": ""
+		},
+		"ir-blaster.com/data/sinks/file": {
+			"Tests": [
+				{
+					"Package": "ir-blaster.com/data/sinks/file",
+					"Name": "TestSink",
+					"Time": 0,
+					"Passed": true,
+					"Failed": false,
+					"Skipped": false,
+					"Output": []
+				},
+				{
+					"Package": "ir-blaster.com/data/sinks/file",
+					"Name": "TestSink_NonExistingParentDir",
+					"Time": 0,
+					"Passed": true,
+					"Failed": false,
+					"Skipped": false,
+					"Output": []
+				},
+				{
+					"Package": "ir-blaster.com/data/sinks/file",
+					"Name": "TestSink_Dir",
+					"Time": 0,
+					"Passed": true,
+					"Failed": false,
+					"Skipped": false,
+					"Output": []
+				}
+			],
+			"PassedTestsCount": 3,
+			"NotPassedTestsCount": 0,
+			"SkippedTestsCount": 0,
+			"FailedTestsCount": 0,
+			"TotalTime": 7,
+			"CoveragePercentage": ""
+		},
+		"ir-blaster.com/data/sinks/github": {
+			"Tests": [
+				{
+					"Package": "ir-blaster.com/data/sinks/github",
+					"Name": "TestSink_DummyComment",
+					"Time": 0,
+					"Passed": true,
+					"Failed": false,
+					"Skipped": false,
+					"Output": []
+				},
+				{
+					"Package": "ir-blaster.com/data/sinks/github",
+					"Name": "TestSink_BadCredentials",
+					"Time": 0,
+					"Passed": true,
+					"Failed": false,
+					"Skipped": false,
+					"Output": []
+				},
+				{
+					"Package": "ir-blaster.com/data/sinks/github",
+					"Name": "TestSink_EmptyRepoOwner",
+					"Time": 0,
+					"Passed": true,
+					"Failed": false,
+					"Skipped": false,
+					"Output": []
+				},
+				{
+					"Package": "ir-blaster.com/data/sinks/github",
+					"Name": "TestSink_EmptyRepoName",
+					"Time": 0,
+					"Passed": true,
+					"Failed": false,
+					"Skipped": false,
+					"Output": []
+				},
+				{
+					"Package": "ir-blaster.com/data/sinks/github",
+					"Name": "TestSink_0PRID",
+					"Time": 0,
+					"Passed": true,
+					"Failed": false,
+					"Skipped": false,
+					"Output": []
+				}
+			],
+			"PassedTestsCount": 5,
+			"NotPassedTestsCount": 0,
+			"SkippedTestsCount": 0,
+			"FailedTestsCount": 0,
+			"TotalTime": 20,
+			"CoveragePercentage": ""
+		},
+		"ir-blaster.com/data/sources/embedded": {
+			"Tests": [
+				{
+					"Package": "ir-blaster.com/data/sources/embedded",
+					"Name": "TestSource_GithubPRComment",
+					"Time": 0,
+					"Passed": true,
+					"Failed": false,
+					"Skipped": false,
+					"Output": []
+				},
+				{
+					"Package": "ir-blaster.com/data/sources/embedded",
+					"Name": "TestSource_MissingFile",
+					"Time": 0,
+					"Passed": true,
+					"Failed": false,
+					"Skipped": false,
+					"Output": []
+				},
+				{
+					"Package": "ir-blaster.com/data/sources/embedded",
+					"Name": "TestSource_Directory",
+					"Time": 0,
+					"Passed": true,
+					"Failed": false,
+					"Skipped": false,
+					"Output": []
+				}
+			],
+			"PassedTestsCount": 3,
+			"NotPassedTestsCount": 0,
+			"SkippedTestsCount": 0,
+			"FailedTestsCount": 0,
+			"TotalTime": 8,
+			"CoveragePercentage": ""
+		},
+		"ir-blaster.com/data/sources/file": {
+			"Tests": [
+				{
+					"Package": "ir-blaster.com/data/sources/file",
+					"Name": "TestSource_MissingFile",
+					"Time": 0,
+					"Passed": true,
+					"Failed": false,
+					"Skipped": false,
+					"Output": []
+				},
+				{
+					"Package": "ir-blaster.com/data/sources/file",
+					"Name": "TestSource_Directory",
+					"Time": 0,
+					"Passed": true,
+					"Failed": false,
+					"Skipped": false,
+					"Output": []
+				},
+				{
+					"Package": "ir-blaster.com/data/sources/file",
+					"Name": "TestSource_GithubPRComment",
+					"Time": 0,
+					"Passed": true,
+					"Failed": false,
+					"Skipped": false,
+					"Output": []
+				}
+			],
+			"PassedTestsCount": 3,
+			"NotPassedTestsCount": 0,
+			"SkippedTestsCount": 0,
+			"FailedTestsCount": 0,
+			"TotalTime": 2,
+			"CoveragePercentage": ""
+		},
+		"ir-blaster.com/data/templates/gotpl": {
+			"Tests": [
+				{
+					"Package": "ir-blaster.com/data/templates/gotpl",
+					"Name": "TestTemplate_Empty",
+					"Time": 0,
+					"Passed": true,
+					"Failed": false,
+					"Skipped": false,
+					"Output": []
+				}
+			],
+			"PassedTestsCount": 1,
+			"NotPassedTestsCount": 0,
+			"SkippedTestsCount": 0,
+			"FailedTestsCount": 0,
+			"TotalTime": 1,
+			"CoveragePercentage": ""
+		}
+	}
+}

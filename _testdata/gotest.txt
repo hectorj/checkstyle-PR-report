@@ -1,0 +1,98 @@
+?   	ir-blaster.com	[no test files]
+?   	ir-blaster.com/ir-blaster-go	[no test files]
+?   	ir-blaster.com/data	[no test files]
+?   	ir-blaster.com/data/parsers	[no test files]
+=== RUN   TestParser
+=== RUN   TestParser/Empty
+=== RUN   TestParser/Gometalinter
+--- PASS: TestParser (0.00s)
+    --- PASS: TestParser/Empty (0.00s)
+    --- PASS: TestParser/Gometalinter (0.00s)
+PASS
+ok  	ir-blaster.com/data/parsers/checkstyle	0.016s
+=== RUN   TestParser
+--- SKIP: TestParser (0.00s)
+	parser_test.go:14: @FIXME
+PASS
+ok  	ir-blaster.com/data/parsers/cobertura	0.006s
+=== RUN   TestParser
+--- PASS: TestParser (0.00s)
+PASS
+ok  	ir-blaster.com/data/parsers/gocover	0.009s
+=== RUN   TestParser
+--- FAIL: TestParser (0.00s)
+	assertions.go:226:
+
+	Error Trace:	parser_test.go:23
+
+	Error:      	Not equal:
+
+	            	expected: gotest.Results{Tests:[]gotest.Test(nil), PassedTestsCount:0x0, SkippedTestsCount:0x0, FailedTestsCount:0x0, TotalTime:0x0}
+
+	            	received: gotest.Results{Tests:[]gotest.Test{}, PassedTestsCount:0x0, SkippedTestsCount:0x0, FailedTestsCount:0x0, TotalTime:0x0}
+
+
+
+	            	Diff:
+
+	            	--- Expected
+
+	            	+++ Actual
+
+	            	@@ -1,3 +1,4 @@
+
+	            	 (gotest.Results) {
+
+	            	- Tests: ([]gotest.Test) <nil>,
+
+	            	+ Tests: ([]gotest.Test) {
+
+	            	+ },
+
+	            	  PassedTestsCount: (uint) 0,
+FAIL
+FAIL	ir-blaster.com/data/parsers/gotest	0.005s
+?   	ir-blaster.com/data/sinks	[no test files]
+=== RUN   TestSink
+--- PASS: TestSink (0.00s)
+=== RUN   TestSink_NonExistingParentDir
+--- PASS: TestSink_NonExistingParentDir (0.00s)
+=== RUN   TestSink_Dir
+--- PASS: TestSink_Dir (0.00s)
+PASS
+ok  	ir-blaster.com/data/sinks/file	0.007s
+=== RUN   TestSink_DummyComment
+--- PASS: TestSink_DummyComment (0.00s)
+=== RUN   TestSink_BadCredentials
+--- PASS: TestSink_BadCredentials (0.00s)
+=== RUN   TestSink_EmptyRepoOwner
+--- PASS: TestSink_EmptyRepoOwner (0.00s)
+=== RUN   TestSink_EmptyRepoName
+--- PASS: TestSink_EmptyRepoName (0.00s)
+=== RUN   TestSink_0PRID
+--- PASS: TestSink_0PRID (0.00s)
+PASS
+ok  	ir-blaster.com/data/sinks/github	0.020s
+?   	ir-blaster.com/data/sources	[no test files]
+=== RUN   TestSource_GithubPRComment
+--- PASS: TestSource_GithubPRComment (0.00s)
+=== RUN   TestSource_MissingFile
+--- PASS: TestSource_MissingFile (0.00s)
+=== RUN   TestSource_Directory
+--- PASS: TestSource_Directory (0.00s)
+PASS
+ok  	ir-blaster.com/data/sources/embedded	0.008s
+=== RUN   TestSource_MissingFile
+--- PASS: TestSource_MissingFile (0.00s)
+=== RUN   TestSource_Directory
+--- PASS: TestSource_Directory (0.00s)
+=== RUN   TestSource_GithubPRComment
+--- PASS: TestSource_GithubPRComment (0.00s)
+PASS
+ok  	ir-blaster.com/data/sources/file	0.002s
+?   	ir-blaster.com/data/templates	[no test files]
+=== RUN   TestTemplate_Empty
+--- PASS: TestTemplate_Empty (0.00s)
+PASS
+ok  	ir-blaster.com/data/templates/gotpl	0.001s
+?   	ir-blaster.com/static	[no test files]

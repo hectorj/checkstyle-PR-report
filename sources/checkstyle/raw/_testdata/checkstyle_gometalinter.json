@@ -1,0 +1,194 @@
+{
+	"Violations": [
+		{
+			"File": "checkstyle/checkstyle.go",
+			"Source": "",
+			"Line": 10,
+			"Column": 1,
+			"Severity": "warning",
+			"Message": "exported function ParseFile should have comment or be unexported"
+		},
+		{
+			"File": "checkstyle/checkstyle.go",
+			"Source": "",
+			"Line": 39,
+			"Column": 6,
+			"Severity": "warning",
+			"Message": "type name will be used as checkstyle.CheckstyleFile by other packages, and that stutters; consider calling this File"
+		},
+		{
+			"File": "checkstyle/checkstyle.go",
+			"Source": "",
+			"Line": 39,
+			"Column": 6,
+			"Severity": "warning",
+			"Message": "exported type CheckstyleFile should have comment or be unexported"
+		},
+		{
+			"File": "checkstyle/checkstyle.go",
+			"Source": "",
+			"Line": 33,
+			"Column": 6,
+			"Severity": "warning",
+			"Message": "exported type Checkstyle should have comment or be unexported"
+		},
+		{
+			"File": "checkstyle/checkstyle.go",
+			"Source": "",
+			"Line": 18,
+			"Column": 1,
+			"Severity": "warning",
+			"Message": "exported function Parse should have comment or be unexported"
+		},
+		{
+			"File": "checkstyle/checkstyle.go",
+			"Source": "",
+			"Line": 45,
+			"Column": 6,
+			"Severity": "warning",
+			"Message": "type name will be used as checkstyle.CheckstyleError by other packages, and that stutters; consider calling this Error"
+		},
+		{
+			"File": "checkstyle/checkstyle.go",
+			"Source": "",
+			"Line": 45,
+			"Column": 6,
+			"Severity": "warning",
+			"Message": "exported type CheckstyleError should have comment or be unexported"
+		},
+		{
+			"File": "githubreport/pr.go",
+			"Source": "",
+			"Line": 27,
+			"Column": 29,
+			"Severity": "warning",
+			"Message": "error return value not checked (client.Issues.CreateComment(ctx, owner, repo, int(id), comment))"
+		},
+		{
+			"File": "githubreport/pr.go",
+			"Source": "",
+			"Line": 32,
+			"Column": 6,
+			"Severity": "warning",
+			"Message": "exported type TemplateData should have comment or be unexported"
+		},
+		{
+			"File": "githubreport/pr.go",
+			"Source": "",
+			"Line": 15,
+			"Column": 1,
+			"Severity": "warning",
+			"Message": "exported function ReportToGithub should have comment or be unexported"
+		},
+		{
+			"File": "main.go",
+			"Source": "",
+			"Line": 19,
+			"Column": 2,
+			"Severity": "warning",
+			"Message": "struct field GithubPullRequestId should be GithubPullRequestID"
+		}
+	],
+	"ByFile": {
+		"checkstyle/checkstyle.go": {
+			"Violations": [
+				{
+					"File": "checkstyle/checkstyle.go",
+					"Source": "",
+					"Line": 10,
+					"Column": 1,
+					"Severity": "warning",
+					"Message": "exported function ParseFile should have comment or be unexported"
+				},
+				{
+					"File": "checkstyle/checkstyle.go",
+					"Source": "",
+					"Line": 39,
+					"Column": 6,
+					"Severity": "warning",
+					"Message": "type name will be used as checkstyle.CheckstyleFile by other packages, and that stutters; consider calling this File"
+				},
+				{
+					"File": "checkstyle/checkstyle.go",
+					"Source": "",
+					"Line": 39,
+					"Column": 6,
+					"Severity": "warning",
+					"Message": "exported type CheckstyleFile should have comment or be unexported"
+				},
+				{
+					"File": "checkstyle/checkstyle.go",
+					"Source": "",
+					"Line": 33,
+					"Column": 6,
+					"Severity": "warning",
+					"Message": "exported type Checkstyle should have comment or be unexported"
+				},
+				{
+					"File": "checkstyle/checkstyle.go",
+					"Source": "",
+					"Line": 18,
+					"Column": 1,
+					"Severity": "warning",
+					"Message": "exported function Parse should have comment or be unexported"
+				},
+				{
+					"File": "checkstyle/checkstyle.go",
+					"Source": "",
+					"Line": 45,
+					"Column": 6,
+					"Severity": "warning",
+					"Message": "type name will be used as checkstyle.CheckstyleError by other packages, and that stutters; consider calling this Error"
+				},
+				{
+					"File": "checkstyle/checkstyle.go",
+					"Source": "",
+					"Line": 45,
+					"Column": 6,
+					"Severity": "warning",
+					"Message": "exported type CheckstyleError should have comment or be unexported"
+				}
+			]
+		},
+		"githubreport/pr.go": {
+			"Violations": [
+				{
+					"File": "githubreport/pr.go",
+					"Source": "",
+					"Line": 27,
+					"Column": 29,
+					"Severity": "warning",
+					"Message": "error return value not checked (client.Issues.CreateComment(ctx, owner, repo, int(id), comment))"
+				},
+				{
+					"File": "githubreport/pr.go",
+					"Source": "",
+					"Line": 32,
+					"Column": 6,
+					"Severity": "warning",
+					"Message": "exported type TemplateData should have comment or be unexported"
+				},
+				{
+					"File": "githubreport/pr.go",
+					"Source": "",
+					"Line": 15,
+					"Column": 1,
+					"Severity": "warning",
+					"Message": "exported function ReportToGithub should have comment or be unexported"
+				}
+			]
+		},
+		"main.go": {
+			"Violations": [
+				{
+					"File": "main.go",
+					"Source": "",
+					"Line": 19,
+					"Column": 2,
+					"Severity": "warning",
+					"Message": "struct field GithubPullRequestId should be GithubPullRequestID"
+				}
+			]
+		}
+	}
+}
