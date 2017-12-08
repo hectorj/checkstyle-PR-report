@@ -1,21 +1,21 @@
 package glue
 
 import (
-	"ir-blaster.com/targets/basichtml"
-	"ir-blaster.com/targets/basichtml/github"
 	"github.com/spf13/cobra"
 	"github.com/spf13/pflag"
 	"github.com/spf13/viper"
+	"ir-blaster.com/targets/basichtml"
+	"ir-blaster.com/targets/basichtml/github"
 )
 
 func BuildGithubCmd() (*cobra.Command, error) {
-	basicHTMLFileV := viper.New()
-	basicHTMLFileFlags := pflag.NewFlagSet("github", pflag.PanicOnError)
-	basicHTMLFileFunc, err := buildGithubApp(basicHTMLFileV, basicHTMLFileFlags)
+	githubV := viper.New()
+	githubFlags := pflag.NewFlagSet("github", pflag.PanicOnError)
+	githubFunc, err := buildGithubApp(githubV, githubFlags)
 	if err != nil {
 		return nil, err
 	}
-	err = basicHTMLFileV.BindPFlags(basicHTMLFileFlags)
+	err = githubV.BindPFlags(githubFlags)
 	if err != nil {
 		return nil, err
 	}
@@ -23,10 +23,10 @@ func BuildGithubCmd() (*cobra.Command, error) {
 	basicHTMLFileCmd := &cobra.Command{
 		Use: "github",
 		RunE: func(cmd *cobra.Command, args []string) error {
-			return basicHTMLFileFunc()
+			return githubFunc()
 		},
 	}
-	basicHTMLFileCmd.Flags().AddFlagSet(basicHTMLFileFlags)
+	basicHTMLFileCmd.Flags().AddFlagSet(githubFlags)
 
 	return basicHTMLFileCmd, nil
 }
