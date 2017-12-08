@@ -1,9 +1,9 @@
 package glue
 
 import (
-	"ir-blaster.com/targets/basichtml/github"
 	"github.com/spf13/pflag"
 	"github.com/spf13/viper"
+	"ir-blaster.com/targets/basichtml/github"
 )
 
 const (
@@ -25,19 +25,19 @@ func (cfg githubConfig) setupFlags(flags *pflag.FlagSet) {
 }
 
 func (cfg githubConfig) GetAuth() github.Authentication {
-	oauthToken := viper.GetString(githubOauthTokenKey)
+	oauthToken := cfg.v.GetString(githubOauthTokenKey)
 
 	return github.NewOauth(oauthToken)
 }
 
 func (cfg githubConfig) GetRepoOwner() string {
-	return viper.GetString(githubRepoOwnerKey)
+	return cfg.v.GetString(githubRepoOwnerKey)
 }
 
 func (cfg githubConfig) GetRepoName() string {
-	return viper.GetString(githubRepoNameKey)
+	return cfg.v.GetString(githubRepoNameKey)
 }
 
 func (cfg githubConfig) GetPullRequestID() uint64 {
-	return uint64(viper.GetInt64(githubPRIDKey))
+	return uint64(cfg.v.GetInt64(githubPRIDKey))
 }
