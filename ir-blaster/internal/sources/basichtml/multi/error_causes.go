@@ -1,11 +1,6 @@
 package basichtmlmulti
 
+import "ir-blaster.com/ir-blaster/internal/errconst"
 
-type constantError string
-
-func (err constantError) Error() string {
-	return string(err)
-}
-
-const RequiresAtLeastOneSource = constantError("at least one source is required as input, none provided")
+const RequiresAtLeastOneSource = errconst.Error("at least one source is required as input, none provided")
 
