@@ -13,7 +13,7 @@ func buildBasicHTMLMultiSource(v *viper.Viper, flags *pflag.FlagSet) (basichtml.
 		return nil, err
 	}
 
-	return baischtmlmulti.New(srcs)
+	return basichtmlmulti.New(srcs)
 }
 
 func buildBasicHTMLSources(v *viper.Viper, flags *pflag.FlagSet) ([]basichtml.Source, error) {

@@ -1,4 +1,4 @@
-package baischtmlmulti
+package basichtmlmulti
 
 import (
 	"io"
