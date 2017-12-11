@@ -1,4 +1,4 @@
-{{ if lt $.PassedTestsCount (len $.Tests) -}}
+{{- if lt $.PassedTestsCount (len $.Tests) -}}
 <details {{- if lt $.NotPassedTestsCount 3 }} open {{ end }}>
 	<summary>
 		Tests : {{ $.PassedTestsCount }}/{{ len $.Tests }} passed.
@@ -48,4 +48,6 @@
 		{{ end }}{{ end }}
 	</ul>
 </details>
+{{- else -}}
+All {{ $.PassedTestsCount }} tests passed.
 {{- end }}
