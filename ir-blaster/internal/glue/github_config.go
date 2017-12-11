@@ -6,6 +6,7 @@ import (
 	"ir-blaster.com/ir-blaster/internal/targets/basichtml/github"
 )
 
+/* #nosec */
 const (
 	githubOauthTokenKey = "github-oauth-token"
 	githubRepoOwnerKey  = "github-repo-owner"

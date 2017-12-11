@@ -1,15 +1,27 @@
-all: _testdata/ab0x.go static/ab0x.go test-results.junit.xml lint-results.checkstyle.xml report.html
+all: lint-results.checkstyle.xml gotest.report.txt report.html
 
-_testdata/ab0x.go: _testdata/b0x.toml
-	cd _testdata && rm -f ab0x.go && fileb0x b0x.toml
+build:
+	mkdir ./build
 
-static/ab0x.go: static/b0x.toml
-	cd static && rm -f ab0x.go && fileb0x b0x.toml
+build/packr: build
+	GOBIN="$$(pwd)/build/" go get -v github.com/gobuffalo/packr/packr
 
-lint-results.checkstyle.xml:
-	#gometalinter --disable-all --config=gometalinter.conf.json --checkstyle ./... > lint-results.checkstyle.xml || true
+build/gometalinter: build
+	GOBIN="$$(pwd)/build/" go get -v github.com/alecthomas/gometalinter && ./build/gometalinter --config=gometalinter.conf.json --install
 
-report.html: lint-results.checkstyle.xml
-	go test -v -cover ./... 2>&1 | go run ./ir-blaster-go/main.go --gotest="stdin://" --checkstyle="./lint-results.checkstyle.xml" --out="./report.html"
+build/ir-blaster: build build/packr
+	GOBIN="$$(pwd)/build/" ./build/packr install ./ir-blaster
 
-.PHONY: all _testdata/ab0x.go static/ab0x.go test-results.junit.xml lint-results.checkstyle.xml report.html #TODO: define dependencies and stop using PHONY
+build/lint-results.checkstyle.xml: build build/gometalinter
+	./build/gometalinter --disable-all --config=gometalinter.conf.json --checkstyle ./... | tee ./build/lint-results.checkstyle.xml
+
+build/gotest.report.txt: build
+	go test -v ./... 2>&1 | tee ./build/gotest.report.txt
+
+report-to-github: build/ir-blaster build/lint-results.checkstyle.xml build/gotest.report.txt build/ir-blaster
+	./build/ir-blaster github --gotest="./build/gotest.report.txt" --checkstyle="./build/lint-results.checkstyle.xml" --github-repo-owner=hectorj --github-repo-name=ir-blaster --github-pr-id=$${TRAVIS_PULL_REQUEST} --github-oauth-token=$${GITHUB_TOKEN}
+
+build/report.html: build build/ir-blaster build/lint-results.checkstyle.xml build/gotest.report.txt build/ir-blaster
+	./build/ir-blaster htmlfile --gotest="./build/gotest.report.txt" --checkstyle="./build/lint-results.checkstyle.xml" --output="./build/report.html"
+
+.PHONY: all build/ir-blaster build/gotest.report.txt build/lint-results.checkstyle.xml build/report.html report-to-github #TODO: define dependencies and stop using PHONY

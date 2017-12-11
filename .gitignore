@@ -12,7 +12,5 @@
 
 .env
 
-ir-blaster.conf.toml
-/lint-results.checkstyle.xml
-/report.html
+/build/
 *-packr.go
