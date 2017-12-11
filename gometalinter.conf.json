@@ -1,14 +1,14 @@
 {
   "Disable": [
     "golint",
-    "ineffassign"
+    "ineffassign",
+	"dupl"
   ],
   "Enable": [
     "varcheck",
     "structcheck",
     "maligned",
     "megacheck",
-    "dupl",
     "interfacer",
     "gas",
     "goconst",
