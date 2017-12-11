@@ -6,11 +6,11 @@ import (
 
 	"io"
 
+	"github.com/stretchr/testify/require"
 	"ir-blaster.com/ir-blaster/internal/_testdata"
 	"ir-blaster.com/ir-blaster/internal/sources/gocover"
 	"ir-blaster.com/ir-blaster/internal/sources/gocover/raw"
 	"ir-blaster.com/ir-blaster/internal/sources/raw"
-	"github.com/stretchr/testify/require"
 )
 
 func TestParser(t *testing.T) {

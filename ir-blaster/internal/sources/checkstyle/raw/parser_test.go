@@ -9,10 +9,10 @@ import (
 	"io"
 
 	"github.com/gobuffalo/packr"
+	"github.com/stretchr/testify/require"
 	"ir-blaster.com/ir-blaster/internal/_testdata"
 	"ir-blaster.com/ir-blaster/internal/sources/checkstyle/raw"
 	"ir-blaster.com/ir-blaster/internal/sources/raw"
-	"github.com/stretchr/testify/require"
 )
 
 func TestParser(t *testing.T) {

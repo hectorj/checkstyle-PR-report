@@ -4,8 +4,8 @@ import (
 	"encoding/xml"
 	"io"
 
-	"ir-blaster.com/ir-blaster/internal/sources/checkstyle"
 	"github.com/pkg/errors"
+	"ir-blaster.com/ir-blaster/internal/sources/checkstyle"
 )
 
 func parseCheckstyleXML(xmlReader io.Reader) (parsedXML result, err error) {

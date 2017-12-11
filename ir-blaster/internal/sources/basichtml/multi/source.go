@@ -4,8 +4,8 @@ import (
 	"io"
 	"strings"
 
-	"ir-blaster.com/ir-blaster/internal/sources/basichtml"
 	"github.com/pkg/errors"
+	"ir-blaster.com/ir-blaster/internal/sources/basichtml"
 )
 
 func New(sources []basichtml.Source) (basichtml.Source, error) {

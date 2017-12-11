@@ -3,9 +3,9 @@ package minified
 import (
 	"io"
 
-	"ir-blaster.com/ir-blaster/internal/targets/basichtml"
 	"github.com/tdewolff/minify"
 	"github.com/tdewolff/minify/html"
+	"ir-blaster.com/ir-blaster/internal/targets/basichtml"
 )
 
 func New(wrapped basichtml.Target) (basichtml.Target, error) {

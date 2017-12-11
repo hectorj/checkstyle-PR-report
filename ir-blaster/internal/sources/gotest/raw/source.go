@@ -1,9 +1,9 @@
 package gotestraw
 
 import (
+	"github.com/jstemmer/go-junit-report/parser"
 	"ir-blaster.com/ir-blaster/internal/sources/gotest"
 	"ir-blaster.com/ir-blaster/internal/sources/raw"
-	"github.com/jstemmer/go-junit-report/parser"
 )
 
 func New(src raw.Source) (gotest.Source, error) {

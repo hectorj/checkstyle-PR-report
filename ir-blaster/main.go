@@ -3,9 +3,9 @@ package main // import "ir-blaster.com/ir-blaster"
 import (
 	"os"
 
-	"ir-blaster.com/ir-blaster/internal/glue"
 	"github.com/labstack/gommon/log"
 	"github.com/spf13/cobra"
+	"ir-blaster.com/ir-blaster/internal/glue"
 )
 
 func main() {

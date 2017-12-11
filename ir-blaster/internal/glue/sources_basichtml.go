@@ -1,10 +1,10 @@
 package glue
 
 import (
-	"ir-blaster.com/ir-blaster/internal/sources/basichtml"
-	"ir-blaster.com/ir-blaster/internal/sources/basichtml/multi"
 	"github.com/spf13/pflag"
 	"github.com/spf13/viper"
+	"ir-blaster.com/ir-blaster/internal/sources/basichtml"
+	"ir-blaster.com/ir-blaster/internal/sources/basichtml/multi"
 )
 
 func buildBasicHTMLMultiSource(v *viper.Viper, flags *pflag.FlagSet) (basichtml.Source, error) {

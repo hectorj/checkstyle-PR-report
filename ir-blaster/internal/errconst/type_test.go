@@ -2,8 +2,9 @@ package errconst_test
 
 import (
 	"testing"
-	"ir-blaster.com/ir-blaster/internal/errconst"
+
 	"github.com/stretchr/testify/require"
+	"ir-blaster.com/ir-blaster/internal/errconst"
 )
 
 func TestError_Error(t *testing.T) {

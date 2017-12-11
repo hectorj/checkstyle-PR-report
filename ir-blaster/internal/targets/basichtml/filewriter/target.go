@@ -6,9 +6,9 @@ import (
 
 	"strings"
 
+	"github.com/pkg/errors"
 	"ir-blaster.com/ir-blaster/internal/targets/basichtml"
 	"ir-blaster.com/ir-blaster/internal/targets/basichtml/minified"
-	"github.com/pkg/errors"
 )
 
 func New(cfg Config) (basichtml.Target, error) {

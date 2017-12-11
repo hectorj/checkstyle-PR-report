@@ -1,14 +1,14 @@
 package glue
 
 import (
+	"github.com/spf13/pflag"
+	"github.com/spf13/viper"
 	"ir-blaster.com/ir-blaster/internal/sources/basichtml"
 	"ir-blaster.com/ir-blaster/internal/sources/basichtml/gotest"
 	"ir-blaster.com/ir-blaster/internal/sources/gotest"
 	"ir-blaster.com/ir-blaster/internal/sources/gotest/raw"
 	"ir-blaster.com/ir-blaster/internal/sources/raw"
 	"ir-blaster.com/ir-blaster/internal/sources/raw/filereader"
-	"github.com/spf13/pflag"
-	"github.com/spf13/viper"
 )
 
 func buildBasicHTMLGotestSource(v *viper.Viper, flags *pflag.FlagSet) (basichtml.Source, error) {

@@ -1,8 +1,8 @@
 package gotestraw
 
 import (
-	"ir-blaster.com/ir-blaster/internal/sources/gotest"
 	testparser "github.com/jstemmer/go-junit-report/parser"
+	"ir-blaster.com/ir-blaster/internal/sources/gotest"
 )
 
 func mapTestReportToResults(report *testparser.Report) (*gotest.AllResults, error) {

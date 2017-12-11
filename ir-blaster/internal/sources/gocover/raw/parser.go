@@ -6,9 +6,9 @@ import (
 	"os"
 	"strconv"
 
+	"golang.org/x/tools/cover"
 	"ir-blaster.com/ir-blaster/internal/sources/gocover"
 	"ir-blaster.com/ir-blaster/internal/sources/raw"
-	"golang.org/x/tools/cover"
 )
 
 func New(src raw.Source) (gocover.Source, error) {

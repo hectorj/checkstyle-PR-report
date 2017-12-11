@@ -1,11 +1,11 @@
 package glue
 
 import (
-	"ir-blaster.com/ir-blaster/internal/targets/basichtml"
-	"ir-blaster.com/ir-blaster/internal/targets/basichtml/filewriter"
 	"github.com/spf13/cobra"
 	"github.com/spf13/pflag"
 	"github.com/spf13/viper"
+	"ir-blaster.com/ir-blaster/internal/targets/basichtml"
+	"ir-blaster.com/ir-blaster/internal/targets/basichtml/filewriter"
 )
 
 func BuildBasicHTMLFileCmd() (*cobra.Command, error) {

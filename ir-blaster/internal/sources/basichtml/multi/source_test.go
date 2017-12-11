@@ -1,19 +1,20 @@
 package basichtmlmulti_test
 
 import (
-	"testing"
-	"github.com/stretchr/testify/require"
-	"ir-blaster.com/ir-blaster/internal/sources/basichtml/multi"
-	"ir-blaster.com/ir-blaster/internal/sources/basichtml"
-	"io/ioutil"
 	"io"
+	"io/ioutil"
 	"strings"
+	"testing"
+
 	"github.com/pkg/errors"
+	"github.com/stretchr/testify/require"
+	"ir-blaster.com/ir-blaster/internal/sources/basichtml"
+	"ir-blaster.com/ir-blaster/internal/sources/basichtml/multi"
 )
 
 func TestNew(t *testing.T) {
 	testcases := map[string]struct {
-		srcs []basichtml.Source
+		srcs           []basichtml.Source
 		expectedResult string
 	}{
 		"single": {
@@ -63,15 +64,15 @@ func TestNew(t *testing.T) {
 
 func TestNew_Error(t *testing.T) {
 	testcases := map[string]struct {
-		srcs []basichtml.Source
+		srcs               []basichtml.Source
 		expectedErrorCause error
 	}{
 		"nil_sources": {
-			srcs: nil,
+			srcs:               nil,
 			expectedErrorCause: basichtmlmulti.RequiresAtLeastOneSource,
 		},
 		"empty_sources": {
-			srcs: make([]basichtml.Source, 0, 1),
+			srcs:               make([]basichtml.Source, 0, 1),
 			expectedErrorCause: basichtmlmulti.RequiresAtLeastOneSource,
 		},
 	}
@@ -95,7 +96,7 @@ func TestNew_ErrorOnProvide(t *testing.T) {
 	var testErrorCause = errors.New("test error cause")
 
 	testcases := map[string]struct {
-		srcs []basichtml.Source
+		srcs               []basichtml.Source
 		expectedErrorCause error
 	}{
 		"propagates": {
@@ -164,7 +165,7 @@ func TestNew_ErrorOnRead(t *testing.T) {
 	var testErrorCause = errors.New("test error cause")
 
 	testcases := map[string]struct {
-		srcs []basichtml.Source
+		srcs               []basichtml.Source
 		expectedErrorCause error
 	}{
 		"propagates": {
@@ -199,7 +200,7 @@ func TestNew_ErrorOnRead(t *testing.T) {
 	}
 }
 
-type erroringReader struct { err error}
+type erroringReader struct{ err error }
 
 func (r erroringReader) Read(p []byte) (n int, err error) {
 	return 0, r.err
