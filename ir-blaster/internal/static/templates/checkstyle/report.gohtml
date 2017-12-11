@@ -9,7 +9,7 @@
 		<ul>
 		{{ range $violation := $.Violations }}
 			<li>
-				{{/* codeLineReference $violation.File $violation.Line */}}<br/>
+				File "{{ $violation.File }}", line {{ $violation.Line }}<br/>
 				<pre>{{ $violation.Message }}</pre>
 			</li>
 		{{ end }}
