@@ -10,7 +10,7 @@ import (
 	"ir-blaster.com/ir-blaster/internal/static"
 )
 
-var tpl = template.Must(template.New("main").Parse(static.GoCoverBasicHTMLReportGoTpl))
+var tpl = template.Must(template.New("main").Parse(static.GoCoverBasicHTMLReportGoTpl()))
 
 func New(src gocover.Source) (basichtml.Source, error) {
 	return basichtml.SourceFunc(func() (io.Reader, error) {

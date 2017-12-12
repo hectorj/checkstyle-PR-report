@@ -10,7 +10,7 @@ import (
 	"ir-blaster.com/ir-blaster/internal/static"
 )
 
-var tpl = template.Must(template.New("main").Parse(static.CheckstyleBasicHTMLReportGoTpl))
+var tpl = template.Must(template.New("main").Parse(static.CheckstyleBasicHTMLReportGoTpl()))
 
 func New(src checkstyle.Source) (basichtml.Source, error) {
 	return basichtml.SourceFunc(func() (io.Reader, error) {
