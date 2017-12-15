@@ -4,7 +4,7 @@ type Config interface {
 	GetAuth() Authentication
 	GetRepoOwner() string
 	GetRepoName() string
-	GetPullRequestID() uint64
+	GetPullRequestId() uint64
 }
 
 type ConfigStatic struct {
@@ -28,6 +28,6 @@ func (cfg ConfigStatic) GetRepoName() string {
 	return cfg.RepoName
 }
 
-func (cfg ConfigStatic) GetPullRequestID() uint64 {
+func (cfg ConfigStatic) GetPullRequestId() uint64 {
 	return cfg.PullRequestID
 }

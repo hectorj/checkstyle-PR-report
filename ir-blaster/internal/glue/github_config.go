@@ -39,6 +39,6 @@ func (cfg githubConfig) GetRepoName() string {
 	return cfg.v.GetString(githubRepoNameKey)
 }
 
-func (cfg githubConfig) GetPullRequestID() uint64 {
+func (cfg githubConfig) GetPullRequestId() uint64 {
 	return uint64(cfg.v.GetInt64(githubPRIDKey))
 }
