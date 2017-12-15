@@ -16,7 +16,7 @@ func main() {
 	for _, cmdBuilder := range []func() (*cobra.Command, error){glue.BuildBasicHTMLFileCmd, glue.BuildGithubCmd} {
 		cmd, err := cmdBuilder()
 		if err != nil {
-			log.Fatal(err)
+			log.Fatal(error(err))
 		}
 
 		rootCmd.AddCommand(cmd)
