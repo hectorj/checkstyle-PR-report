@@ -26,7 +26,7 @@ func buildCheckstyleSource(v *viper.Viper, flags *pflag.FlagSet) (checkstyle.Sou
 		return nil, err
 	}
 
-	return checkstyleraw.New(rawSource)
+	return checkstyleraw.New(rawSource, true)
 }
 
 func buildRawSourceForCheckstyle(v *viper.Viper, flags *pflag.FlagSet) (raw.Source, error) {

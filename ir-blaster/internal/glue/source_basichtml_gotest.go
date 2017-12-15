@@ -26,7 +26,7 @@ func buildGotestSource(v *viper.Viper, flags *pflag.FlagSet) (gotest.Source, err
 		return nil, err
 	}
 
-	return gotestraw.New(rawSource)
+	return gotestraw.New(rawSource, true)
 }
 
 func buildRawSourceForGotest(v *viper.Viper, flags *pflag.FlagSet) (raw.Source, error) {

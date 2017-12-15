@@ -20,7 +20,7 @@ func TestParser(t *testing.T) {
 
 	parser, err := gotestraw.New(raw.SourceFunc(func() (io.Reader, error) {
 		return reader, nil
-	}))
+	}), true)
 	r.Nil(err)
 
 	results, err := parser.ProvideGoTestResults()

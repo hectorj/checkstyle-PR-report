@@ -10,6 +10,25 @@ addons:
       - docker-ce
 services:
   - docker
+
+jobs:
+  include:
+    - stage: build
+      script: make build/ir-blaster
+    - script: "docker build -t hectorj/ir-blaster ."
+      after_success:
+        - if [ "$TRAVIS_BRANCH" == "master" ]; then
+            docker login -u "$DOCKER_USERNAME" -p "$DOCKER_PASSWORD";
+            docker push hectorj/ir-blaster;
+          fi
+    - stage: test
+      script: make build/gotest.report.txt
+      after_failure:
+        - go run ./ir-blaster github --gotest=build/gotest.report.txt --github-repo-owner=hectorj --github-repo-name=ir-blaster --github-pr-id=$${TRAVIS_PULL_REQUEST} --github-oauth-token=$${GITHUB_TOKEN}
+    - script: make build/lint-results.checkstyle.xml
+      after_failure:
+        - go run ./ir-blaster github --checkstyle=build/lint-results.checkstyle.xml --github-repo-owner=hectorj --github-repo-name=ir-blaster --github-pr-id=$${TRAVIS_PULL_REQUEST} --github-oauth-token=$${GITHUB_TOKEN}
+
 script:
   - if [ "${TRAVIS_PULL_REQUEST}" != "false" ]; then make -k -j report-to-github; else make -k -j build/report.html; fi
   - "docker build -t hectorj/ir-blaster ."
