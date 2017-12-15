@@ -4,6 +4,10 @@ go:
 go_import_path: ir-blaster.com
 install: true
 
+branches:
+  only:
+    - master
+
 jobs:
   include:
     - stage: build
