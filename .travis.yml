@@ -3,21 +3,31 @@ go:
 - 1.9
 go_import_path: ir-blaster.com
 install: true
-sudo: required
-addons:
-  apt:
-    packages:
-      - docker-ce
-services:
-  - docker
-script:
-  - if [ "${TRAVIS_PULL_REQUEST}" != "false" ]; then make -k -j report-to-github; else make -k -j build/report.html; fi
-  - "docker build -t hectorj/ir-blaster ."
-after_success:
-  - if [ "$TRAVIS_BRANCH" == "master" ]; then
-      docker login -u "$DOCKER_USERNAME" -p "$DOCKER_PASSWORD";
-      docker push hectorj/ir-blaster;
-    fi
+
+jobs:
+  include:
+    - stage: build
+      script: make build/ir-blaster
+    - script: "docker build -t hectorj/ir-blaster ."
+      sudo: required
+      addons:
+        apt:
+          packages:
+            - docker-ce
+      services:
+        - docker
+      after_success:
+        - if [ "$TRAVIS_BRANCH" == "master" ]; then
+            docker login -u "$DOCKER_USERNAME" -p "$DOCKER_PASSWORD";
+            docker push hectorj/ir-blaster;
+          fi
+    - stage: test
+      script: make build/gotest.report.txt
+      after_failure:
+        - go run ./ir-blaster/main.go github --gotest=build/gotest.report.txt --github-repo-owner=hectorj --github-repo-name=ir-blaster --github-pr-id=${TRAVIS_PULL_REQUEST} --github-oauth-token=${GITHUB_TOKEN}
+    - script: make build/lint-results.checkstyle.xml
+      after_failure:
+        - go run ./ir-blaster/main.go github --checkstyle=build/lint-results.checkstyle.xml --github-repo-owner=hectorj --github-repo-name=ir-blaster --github-pr-id=${TRAVIS_PULL_REQUEST} --github-oauth-token=${GITHUB_TOKEN}
 env:
   global:
     secure: JVdl+rAHwJQL6VIL82uXvBySPXbiNbXBZYY6pOvegPinGILbqRyRckw7Hny5BbGXsb9Mj2KIuWJNUvrAMpx2Q+CUvFiU8QvIjMMMgGkFwWAlaPzkDu/4b/sXhqHokCrivPx9E7czm/PCcnJK0ff6jmv2DOVaIC2fBcAOqHZmqAxZh0UfsM9ryNNdDRFVtWI/ulOVLAxzFqEI3qGu0rA1YyHwUQ0otthZtU0ugAms4qze1i73ZnFSul/cNo5yA0MgZA+6Diu+aA1fyaOqs+mLHAYKe7529mdL/hPaveBRtBvzJSvMMbnyeHiybcR4lnAoj45kxuZtWYIxHMAjiRW4eWzZCsuNr0GotYp6J4alAxorpD5fR49RLgRUu8tvD0aS/W7RJDorEtQpCvow3s4nOhRvZkLTBBDc+r4YzWmGDDAbZxp3xE6NxNGzIk8WK+v8lJ82l5dvxXRYtxZlEnmWY3H4Dw3ftJoA5HiTSoWN/ZFiMjn43xjSbuJ7rbV13L8p8XywrH6Ux5nhyNPg+rT/RqOOwNs6cLK0f+XSmgcdRg2Hfs7ocXgdkeIk9v1ewzoHJRvJ8q2+uH+z9Gno96eWD4vHKe9FXFAf7DUQWWhLpq50kiCyHpe8I+PRVEz+Xs+uDWiO5iA83+6Z1EpaObD4bth4yqZz+26QhY7V1x7u+qY=

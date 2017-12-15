@@ -39,7 +39,7 @@ func TestParser(t *testing.T) {
 
 			parser, err := checkstyleraw.New(raw.SourceFunc(func() (io.Reader, error) {
 				return reader, nil
-			}))
+			}), false)
 			r.Nil(err)
 
 			results, err := parser.ProvideCheckstyleResults()
