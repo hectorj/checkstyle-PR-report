@@ -1,3 +1,5 @@
+SHELL=/usr/bin/env bash -euo pipefail
+
 all: lint-results.checkstyle.xml gotest.report.txt report.html
 
 build:
