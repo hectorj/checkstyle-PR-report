@@ -33,7 +33,7 @@ func (t target) ProcessBasicHTML(r io.Reader) error {
 		Body: &bodyStr,
 	}
 
-	_, _, err = client.Issues.CreateComment(context.Background(), t.cfg.GetRepoOwner(), t.cfg.GetRepoName(), int(t.cfg.GetPullRequestId()), comment)
+	_, _, err = client.Issues.CreateComment(context.Background(), t.cfg.GetRepoOwner(), t.cfg.GetRepoName(), int(t.cfg.GetPullRequestID()), comment)
 	return err
 }
 
